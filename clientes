@@ -1,0 +1,17 @@
+CREATE TABLE clientes (
+  cpf VARCHAR(14),
+  nome CHAR(30),
+  idade INTEGER,
+  endereco TEXT
+  );
+  
+  INSERT INTO clientes (cpf,nome,idade,endereco)
+  VALUES
+  
+	('11111111111','ab',18,'Rua A, 21'),
+	('22222222222','abc',19,'Rua B, 22'),
+  	('33333333333','abcd',20,'Rua C, 23'),
+  	('44444444444','abcde',21,'Rua D, 24'),
+  	('55555555555','abcdef',22,'Rua E, 25');
+    
+SELECT * FROM clientes;
