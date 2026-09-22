@@ -1,0 +1,39 @@
+CREATE TABLE clientes(
+  id_cliente INT PRIMARY KEY,
+  nome VARCHAR(100),
+  telefone CHAR (10)
+  );
+  
+  CREATE TABLE pedidos(
+   	id_pedido INT PRIMARY KEY,
+    data_pedido CHAR(10),
+    valor REAL(100),
+    id_cliente  INT,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+    );
+    
+    
+    INSERT INTO clientes(id_cliente,nome,telefone)
+    VALUES
+    	
+        (1,'Ana','99999-1111'),
+        (2,'Carlos','99999-2222'),
+        (3,'Julia','99999-3333');
+        
+        
+    INSERT into pedidos(id_pedido,data_pedido,valor,id_cliente)
+    VALUES
+    
+    	(101,'10/09/2026',150.00,2),
+        (102,'11/09/2026',80.00,1),
+        (103,'12/09/2026',220.00,2),
+        (104,'13/09/2026',90.00,3);
+        
+   SELECT * FROM clientes;
+   
+   SELECT * FROM pedidos;
+        
+    
+    
+    
+   
