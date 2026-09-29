@@ -1,0 +1,44 @@
+CREATE TABLE clientes(
+  id_cliente INT PRIMARY KEY,
+  nome VARCHAR(100),
+  telefone CHAR (10),
+  email VARCHAR(20)
+  );
+  
+  CREATE TABLE pedidos(
+   	id_pedido INT PRIMARY KEY,
+    produto TEXT,
+    valor REAL(100),
+    id_cliente  INT,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+    );
+    
+    
+    INSERT INTO clientes(id_cliente,nome,telefone,email)
+    VALUES
+    	
+        (1,'Ana',99999-1111,'ANA@gmail.com'),
+        (2,'Carlos',99999-2222,'CARLOS@gmail.com'),
+        (3,'Bruno',99999-3333,'BRUNO@gmail.com'),
+        (4,'Daniel',99999-4444,'DANIEL@gmail.com'),
+        (5,'Elma',99999-5555,'ELMA@gmail.com');
+        
+        
+    INSERT INTO pedidos(id_pedido,produto,valor,id_cliente)
+    VALUES
+    
+    	(101,'Telefone','R$2.000',2),
+        (102,'Lanterna','R$80.00',1),
+        (103,'Fones de ouvido','R$220.00',3),
+        (104,'Creatina','R$90.00',4),
+        (105,'Ar-condicionado','R$3.000',5);
+
+        
+   SELECT * FROM clientes;
+   
+   SELECT * FROM pedidos;
+        
+    
+    
+    
+   
