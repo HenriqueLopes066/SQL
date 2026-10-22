@@ -1,0 +1,62 @@
+CREATE TABLE utilizadores(
+  id_utilizador INT PRIMARY KEY,
+  nome_utilizador VARCHAR(30),
+  email VARCHAR(30),
+  data_adesao VARCHAR(10)
+  );
+  
+  
+  CREATE TABLE filmes(
+    id_filme INT PRIMARY KEY,
+    titulo TEXT,
+    genero TEXT,
+    ano_lancamento VARCHAR(4),
+    classificacao_etaria VARCHAR(2)
+    );
+  
+  
+  	CREATE TABLE historico_visualizacao(
+      id_historico INT PRIMARY KEY,
+      id_utilizador INT,
+      id_filme INT,
+      data_que_assistiu CHAR(10),
+      dispositivo TEXT(20),
+      FOREIGN KEY (id_utilizador) REFERENCES utilizadores(id_utilizador),
+      FOREIGN KEY (id_filme) REFERENCES filmes(id_filme)
+      );
+      
+      
+      INSERT INTO utilizadores(id_utilizador,nome_utilizador,email,data_adesao)
+      VALUES
+      
+      		(1,'Ana','ANA@gmail.com',01/01/2001),
+            (2,'Bruno','BRUNO@gmail.com',02/01/2002);
+            
+            
+            
+       INSERT INTO filmes(id_filme,titulo,genero,ano_lancamento,classificacao_etaria)
+       VALUES
+       		
+            
+            (1,'Fuga','Suspense',2001,18),
+            (2,'Corra','Suspense',2002,18);
+            
+            
+       INSERT INTO historico_visualizacao(id_historico,id_utilizador,id_filme,data_que_assistiu,dispositivo)
+       VALUES
+      		
+            
+            (1,1,1,03/02/2001,'celular'),
+            (2,2,2,04/02/2002,'celular');
+            
+            
+	SELECT * FROM utilizadores;
+
+	SELECT * FROM filmes;
+    
+  SELECT * FROM historico_visualizacao;
+      
+      
+      
+      
+      
