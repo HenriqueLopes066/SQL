@@ -1,0 +1,73 @@
+DROP TABLE IF EXISTS alunos;
+DROP TABLE IF EXISTS cursos;
+DROP TABLE IF EXISTS matriculas;
+
+CREATE TABLE alunos(
+  id_aluno INT PRIMARY KEY,
+  nome_aluno VARCHAR(30),
+  cpf TEXT,
+  data_nascimento TEXT,
+  telefone TEXT
+  );
+
+
+  
+  CREATE TABLE cursos(
+    id_curso INT PRIMARY KEY,
+    nome_curso TEXT,
+    carga_horaria TEXT,
+    valor_mensalidade TEXT
+    );
+    
+
+
+    
+  	CREATE TABLE matriculas(
+      id_matricula INT PRIMARY KEY,
+      id_aluno INT,
+      id_curso INT,
+      data_matricula TEXT,
+      situacao_matricula TEXT,
+      
+      FOREIGN KEY (id_aluno) REFERENCES alunos(id_aluno),
+      FOREIGN KEY (id_curso) REFERENCES cursos(id_curso)
+      );
+      
+      
+      INSERT INTO alunos(id_aluno,nome_aluno,cpf,data_nascimento,telefone)
+      VALUES
+      
+      		(01,'Ana','000.000.000.01','01/01/2001','(01)-0000-0001'),
+            (02,'Bruno','000.000.000.02','02/02/02/2002','(02)-0000-0002'),
+            (03,'Carlos','000.000.000.03','03/03/03/2003','(03-0000-0003');
+            
+            
+       INSERT INTO cursos(id_curso,nome_curso,carga_horaria,valor_mensalidade)
+       VALUES
+       		
+            
+            (11,'Rede de Computadores','1.200H','R$300,00'),
+            (22,'Análize de dados','1.200H','R$300,00'),
+            (33,'Gastronomia','1.200H','R$300,00');
+            
+            
+       INSERT INTO matriculas(id_matricula,id_aluno,id_curso,data_matricula,situacao_matricula)
+       VALUES
+      		
+            
+            (10,01,11,'10/10/2026','cursando'),
+            (20,02,22,'11/11/2026','cursando'),
+            (30,03,33,'12/12/2026','cursando');
+
+            
+   SELECT * FROM alunos;
+   
+   SELECT * FROM cursos;
+   
+   SELECT * FROM matriculas;
+
+        
+    
+	
+      
+      
