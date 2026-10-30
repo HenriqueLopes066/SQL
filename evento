@@ -1,0 +1,108 @@
+DROP TABLE IF EXISTS clientes;
+DROP TABLE IF EXISTS espacos;
+DROP TABLE IF EXISTS eventos;
+DROP TABLE IF EXISTS servicos;
+DROP TABLE IF EXISTS pagamentos;
+
+
+
+
+
+CREATE TABLE clientes(
+    id_cliente INT PRIMARY KEY,
+    nome VARCHAR(100),
+    telefone VARCHAR(14),
+    email VARCHAR(100)
+);
+
+CREATE TABLE espacos(
+    id_espaco INT PRIMARY KEY,
+  	nome VARCHAR(100),
+    capacidade VARCHAR(100)
+);
+
+CREATE TABLE eventos(
+    id_evento INT PRIMARY KEY,
+    id_cliente INT,
+    id_espaco INT,
+    data_evento DATE,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
+    FOREIGN KEY (id_espaco) REFERENCES espacos(id_espaco)
+);
+
+CREATE TABLE servicos(
+    id_servico INT PRIMARY KEY,
+    tipo_servico VARCHAR(30),
+  	valor TEXT
+);
+
+
+CREATE TABLE pagamentos(
+    id_pagamento INT PRIMARY KEY,
+  	nome VARCHAR(100),
+    id_evento INT,
+    pagamento TEXT,
+    FOREIGN KEY (id_evento) REFERENCES eventos(id_evento)
+);
+
+
+
+INSERT INTO clientes(id_cliente,nome, telefone, email)
+VALUES 
+
+(1,'Ana', '31999999999', 'ANA@email.com'),
+(2,'Bruno', '31888888888', 'BRUNO@email.com');
+
+
+
+INSERT INTO espacos(id_espaco,nome, capacidade)
+VALUES 
+
+
+(11,'Ana', 200),
+(12,'Bruno', 100);
+
+
+
+INSERT INTO eventos(id_evento,id_cliente,id_espaco,data_evento)
+VALUES
+
+(10,1,11,'01/01/2001'),
+(20,2,12,'02/02/2002');
+
+
+
+INSERT INTO servicos(id_servico,tipo_servico, valor)
+VALUES 
+
+(111,'Aniversário-Buffet', 'R$5.000,00'),
+(222,'Decoração Casamento', 'R$10.000,00');
+
+       
+       
+       
+INSERT INTO pagamentos(id_pagamento,nome,id_evento,pagamento)
+VALUES 
+       
+       
+       (100,'Ana',10,'Foi Efetuado'),
+       (200,'Bruno',20,'Não foi efetuado');
+       
+       
+       
+       
+       
+       
+   SELECT * FROM clientes;
+   
+   SELECT * FROM espacos;
+   
+   SELECT * FROM eventos;
+   
+   SELECT * FROM servicos;
+   
+   SELECT * FROM pagamentos;
+   
+
+       
+       
